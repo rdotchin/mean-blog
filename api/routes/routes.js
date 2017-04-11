@@ -1,7 +1,10 @@
-const db = require('./../models/database.js');
-const Blog = require('./../blogModel.js');
+const db = require('./../config/database.js');
+const Blog = require('./../models/blogModel.js');
 module.exports = (app) => {
 
+    app.get('/', (req, res) => {
+       res.send()
+    });
     app.post('/api/create', (req, res) => {
         console.log(req.body);
         //add blog data**

@@ -13,13 +13,12 @@ app.use(bodyParser.json());                                     // parse applica
 app.use(bodyParser.json({ type: 'application/vnd.api+json' })); // parse application/vnd.api+json as json
 app.use(methodOverride('X-HTTP-Method-Override'));
 
-//require routes
-require('./api/routes/routes.js')(app);
-
 
 // Serve static content for the app from the "app" directory
 app.use(express.static(__dirname + "/app"));
 
+//require routes
+require('./api/routes/routes.js')(app);
 
 //start server
 app.listen(PORT, function(){
